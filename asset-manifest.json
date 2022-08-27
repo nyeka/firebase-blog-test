@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/firebase-blog-test/static/css/main.1d089972.css",
-    "main.js": "/firebase-blog-test/static/js/main.eedba3d4.js",
+    "main.css": "/firebase-blog-test/static/css/main.41f54b7c.css",
+    "main.js": "/firebase-blog-test/static/js/main.bca41710.js",
     "index.html": "/firebase-blog-test/index.html",
-    "main.1d089972.css.map": "/firebase-blog-test/static/css/main.1d089972.css.map",
-    "main.eedba3d4.js.map": "/firebase-blog-test/static/js/main.eedba3d4.js.map"
+    "main.41f54b7c.css.map": "/firebase-blog-test/static/css/main.41f54b7c.css.map",
+    "main.bca41710.js.map": "/firebase-blog-test/static/js/main.bca41710.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d089972.css",
-    "static/js/main.eedba3d4.js"
+    "static/css/main.41f54b7c.css",
+    "static/js/main.bca41710.js"
   ]
 }
