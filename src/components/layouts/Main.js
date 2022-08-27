@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Login from "../Login";
@@ -17,4 +16,3 @@ const Main = ({ SetisAuth, isAuth }) => {
 
 export default Main;
 
-const Container = styled.nav``;

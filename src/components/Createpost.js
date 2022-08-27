@@ -22,7 +22,7 @@ const Createpost = ({ isAuth }) => {
     if (isAuth) {
       navigate("/login");
     }
-  }, []);
+  }, );
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");

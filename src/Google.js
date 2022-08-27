@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "./firebase-config";
 
@@ -17,6 +17,7 @@ const Google = () => {
     });
   };
 
+  
   return (
     <div>
       <button onClick={login}>sign using google</button>
