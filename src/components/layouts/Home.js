@@ -6,23 +6,19 @@ import styled from "styled-components";
 const Home = ({ isAuth }) => {
   const [posts, setPosts] = useState([]);
   const usecollection = collection(db, "posts");
-  const [loading, setloading] = useState(false);
 
   useEffect(() => {
     const getdata = async () => {
       try {
-        setloading(true);
         const data = await getDocs(usecollection);
         setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       } catch (error) {
         console.log(error);
       }
-
-      setloading(false);
     };
 
     getdata();
-  }, []);
+  }, [usecollection]);
 
   const deletepost = async (id) => {
     const psotdoc = doc(db, "posts", id);
@@ -31,34 +27,30 @@ const Home = ({ isAuth }) => {
 
   return (
     <Container>
-      {loading ? (
-        <div>Loading</div>
-      ) : (
-        posts.map((item, index) => {
-          return (
-            <div key={index} className="card">
-              <div className="header">
-                <h1>{item.title}</h1>
-                <p>{item.content}</p>
-                <div>
-                  <p>{item.author.name}</p>
-                </div>
+      {posts.map((item, index) => {
+        return (
+          <div key={index} className="card">
+            <div className="header">
+              <h1>{item.title}</h1>
+              <p>{item.content}</p>
+              <div>
+                <p>{item.author.name}</p>
               </div>
-              {isAuth && item.author.id === auth.currentUser.uid && (
-                <div>
-                  <button
-                    onClick={() => {
-                      deletepost(item.id);
-                    }}
-                  >
-                    hapus
-                  </button>
-                </div>
-              )}
             </div>
-          );
-        })
-      )}
+            {isAuth && item.author.id === auth.currentUser.uid && (
+              <div>
+                <button
+                  onClick={() => {
+                    deletepost(item.id);
+                  }}
+                >
+                  hapus
+                </button>
+              </div>
+            )}
+          </div>
+        );
+      })}
     </Container>
   );
 };

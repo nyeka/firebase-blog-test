@@ -22,7 +22,7 @@ const Createpost = ({ isAuth }) => {
     if (isAuth) {
       navigate("/login");
     }
-  }, );
+  });
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -47,7 +47,9 @@ const Createpost = ({ isAuth }) => {
           onChange={(e) => setContent(e.target.value)}
         />
       </div>
-      <button onClick={addBlog}>Submit Post</button>
+      <button onClick={addBlog} disabled={!title || !content}>
+        Submit Post
+      </button>
     </Container>
   );
 };
